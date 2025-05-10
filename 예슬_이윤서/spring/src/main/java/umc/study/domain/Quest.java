@@ -1,24 +1,19 @@
-package umc.study.domain.mapping;
+package umc.study.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
-import umc.study.domain.Customer;
-import umc.study.domain.Mission;
+import umc.study.domain.common.BaseEntity;
 
 @Entity
 @Getter
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-public class Quest {
+public class Quest extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    private Integer amount;
-
-    private Boolean isComplete;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "customer_id")
@@ -27,4 +22,12 @@ public class Quest {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "mission_id")
     private Mission mission;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "store_id")
+    private Store store;
+
+    private int amount;
+
+    private boolean isComplete;
 }

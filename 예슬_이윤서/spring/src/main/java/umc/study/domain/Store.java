@@ -24,6 +24,17 @@ public class Store extends BaseEntity {
 
     private String image;
 
+    private float score;
+
     @Column(nullable = false, length = 100)
     private String description;
+
+    @Override
+    public String toString() {
+        return "Store{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", score=" + score +
+                '}';
+    }
 }
