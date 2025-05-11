@@ -10,6 +10,4 @@ import umc.spring.domain.QMember;
 public class UserRepositoryImpl implements UserRepositoryCustom{
   private final JPAQueryFactory jpaQueryFactory;
   private final QMember member = QMember.member;
-
-
 }
