@@ -67,4 +67,14 @@ public class Member extends BaseEntity {
 
   @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
   private List<Alarm> alarmList = new ArrayList<>();
+
+  @Override
+  public String toString(){
+    return "Member{" +
+            "name=" + name + "," +
+            "gender=" + gender + "," +
+            "email" + email + "," +
+            "address" + address +
+            '}';
+  }
 }
