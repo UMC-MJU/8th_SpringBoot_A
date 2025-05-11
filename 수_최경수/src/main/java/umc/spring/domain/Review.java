@@ -29,4 +29,13 @@ public class Review extends BaseEntity {
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "store_id")
   private Store store;
+
+  @Override
+  public String toString() {
+    return "Review{" +
+            "title=" + title + "," +
+            "body=" + body + "," +
+            "score" + score + "," +
+            '}';
+  }
 }
