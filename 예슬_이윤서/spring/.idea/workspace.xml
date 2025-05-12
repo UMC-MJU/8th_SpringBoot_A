@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5bfb9ab4-26cd-41fc-aa8c-d4ed47909691" name="Changes" comment="" />
+    <list default="true" id="46290fa3-7d1f-445a-a020-50aa06d7c1fb" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,23 +15,30 @@
       <ProjectState />
     </projectState>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Enum" />
-        <option value="Class" />
-        <option value="Interface" />
-      </list>
-    </option>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="spring" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
-  <component name="KubernetesApiPersistence">{}</component>
-  <component name="KubernetesApiProvider">{
-  &quot;isMigrated&quot;: true
-}</component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 7
+  &quot;associatedIndex&quot;: 2
 }</component>
-  <component name="ProjectId" id="2vG4oUTJYSuCuD2WKKzcoTXriua" />
+  <component name="ProjectId" id="2rO7oUO8UYrHWAJT13xonflOayw" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -46,27 +53,20 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;Spring Boot.Application.executor&quot;: &quot;Run&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/cakey/Documents/Study/Spring/spring_umc/spring/build.gradle&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/cakey/Documents/Study/Spring/spring/build.gradle&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
-    ]
   }
 }</component>
   <component name="RunManager">
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="spring.main" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="umc.study.Application" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="hello.spring.Application" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -83,25 +83,13 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5bfb9ab4-26cd-41fc-aa8c-d4ed47909691" name="Changes" comment="" />
-      <created>1743758252078</created>
+      <changelist id="46290fa3-7d1f-445a-a020-50aa06d7c1fb" name="Changes" comment="" />
+      <created>1736418444397</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1743758252078</updated>
-      <workItem from="1743758253133" duration="177000" />
-      <workItem from="1743855095038" duration="597000" />
-      <workItem from="1743918734430" duration="13000" />
-      <workItem from="1744182236069" duration="64000" />
-      <workItem from="1744628496629" duration="2000" />
-      <workItem from="1746072169450" duration="3361000" />
-      <workItem from="1746080827656" duration="10000" />
-      <workItem from="1746184234959" duration="3848000" />
-      <workItem from="1746229858454" duration="829000" />
-      <workItem from="1746426669347" duration="49000" />
-      <workItem from="1746869290837" duration="1910000" />
-      <workItem from="1746871220132" duration="329000" />
-      <workItem from="1746871567033" duration="7837000" />
-      <workItem from="1746879876304" duration="1039000" />
+      <updated>1736418444397</updated>
+      <workItem from="1736418445160" duration="1331000" />
+      <workItem from="1739863548929" duration="10000" />
     </task>
     <servers />
   </component>
