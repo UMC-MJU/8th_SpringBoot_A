@@ -42,24 +42,24 @@ public class Application {
 //							.forEach(System.out::println);
 
 			// 6주차 미션 - 파라미터 값 설정
-			Long userId = 1L;
-			Long reviewId = 1L;
-			Long missionId = 2L;
-			Float reviews = 3.8f;
-			MissionStatus status = CHALLENGING;
-
-			// 6주차 미션 - 유저정보 출력
-			System.out.println(userSerivce.findMemberById(userId));
-
-			// 6주차 미션 - 리뷰정보 출력
-			System.out.println(reviewService.findReview(reviewId));
-			reviewService.findReviewsByScore(reviews)
-							.forEach(System.out::println);
-
-			// 6주차 미션 - 미션정보 출력
-			System.out.println(missionService.findMission(missionId));
-			missionService.findMissionByIdAndStatus(userId, status)
-							.forEach(System.out::println);
+//			Long userId = 1L;
+//			Long reviewId = 1L;
+//			Long missionId = 2L;
+//			Float reviews = 3.8f;
+//			MissionStatus status = CHALLENGING;
+//
+//			// 6주차 미션 - 유저정보 출력
+//			System.out.println(userSerivce.findMemberById(userId));
+//
+//			// 6주차 미션 - 리뷰정보 출력
+//			System.out.println(reviewService.findReview(reviewId));
+//			reviewService.findReviewsByScore(reviews)
+//							.forEach(System.out::println);
+//
+//			// 6주차 미션 - 미션정보 출력
+//			System.out.println(missionService.findMission(missionId));
+//			missionService.findMissionByIdAndStatus(userId, status)
+//							.forEach(System.out::println);
 		};
 	}
 
