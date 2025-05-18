@@ -17,9 +17,25 @@ public class Review extends BaseEntity {
   @Column(columnDefinition = "TEXT")
   private String title;
 
+  @Column(columnDefinition = "TEXT")
+  private String body;
+
   private Float score;
 
-  @ManyToOne
+  @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "member_id")
   private Member member;
+
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "store_id")
+  private Store store;
+
+  @Override
+  public String toString() {
+    return "Review{" +
+            "title=" + title + "," +
+            "body=" + body + "," +
+            "score" + score + "," +
+            '}';
+  }
 }

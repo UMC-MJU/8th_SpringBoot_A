@@ -39,6 +39,7 @@ public class Member extends BaseEntity {
   private Gender gender;
 
   @Enumerated(EnumType.STRING)
+  @Column(columnDefinition = "VARCHAR(10)")
   private SocialType socialType;
 
   @Enumerated(EnumType.STRING)
@@ -66,4 +67,14 @@ public class Member extends BaseEntity {
 
   @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
   private List<Alarm> alarmList = new ArrayList<>();
+
+  @Override
+  public String toString(){
+    return "Member{" +
+            "name=" + name + "," +
+            "gender=" + gender + "," +
+            "email" + email + "," +
+            "address" + address +
+            '}';
+  }
 }
