@@ -1,4 +1,4 @@
-package umc.spring.repository.UserRepository;
+package umc.spring.repository.MemberRepository;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
@@ -7,7 +7,7 @@ import umc.spring.domain.QMember;
 
 @Repository
 @RequiredArgsConstructor
-public class UserRepositoryImpl implements UserRepositoryCustom{
+public class MemberRepositoryImpl implements MemberRepositoryCustom {
   private final JPAQueryFactory jpaQueryFactory;
   private final QMember member = QMember.member;
 }
