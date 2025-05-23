@@ -22,9 +22,9 @@ public class ReviewCommandServiceImpl implements ReviewCommandService {
 
   @Override
   @Transactional
-  public Review joinReview(ReviewRequestDTO.JoinDto request){
-    Review review = ReviewConverter.toReview(request);
-    Optional<Store> store = Optional.ofNullable(storeRepository.findById(request.getStoreId()).orElseThrow(() -> new StoreHandler(ErrorStatus.STORE_NOT_FOUND)));
+  public Review joinReview(Long storeId, ReviewRequestDTO.JoinDto request){
+    Store store = storeRepository.findById(storeId).orElseThrow(() -> new StoreHandler(ErrorStatus.STORE_NOT_FOUND));
+    Review review = ReviewConverter.toReview(request, store);
     return reviewRepository.save(review);
   }
 }

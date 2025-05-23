@@ -15,6 +15,7 @@ public class ReviewResponseDTO {
   @AllArgsConstructor
   public static class JoinResultDTO{
     Long reviewId;
+    String content;
     LocalDateTime createdAt;
   }
 }

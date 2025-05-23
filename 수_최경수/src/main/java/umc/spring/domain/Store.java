@@ -3,6 +3,9 @@ import jakarta.persistence.*;
 import lombok.*;
 import umc.spring.domain.common.BaseEntity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Getter
 @Builder
@@ -21,6 +24,9 @@ public class Store extends BaseEntity {
   private String address;
 
   private Float score;
+
+  @OneToMany(mappedBy = "store", cascade = CascadeType.ALL)
+  private List<Review> reviewList = new ArrayList<>();
 
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "region_id")
