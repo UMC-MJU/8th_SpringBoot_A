@@ -1,5 +1,6 @@
 package umc.spring.web.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -9,6 +10,7 @@ import umc.spring.validation.annotation.ExistCategories;
 import java.util.List;
 
 public class MemberRequestDTO {
+  @Schema(name = "MemberJoinDto")
   @Getter
   public static class JoinDto{
     @NotBlank
