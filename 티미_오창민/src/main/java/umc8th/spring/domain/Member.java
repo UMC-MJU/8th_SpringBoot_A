@@ -2,6 +2,8 @@ package umc8th.spring.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 import umc8th.spring.domain.enums.BaseEntity;
 import umc8th.spring.domain.enums.Gender;
 import umc8th.spring.domain.enums.MemberStatus;
@@ -13,6 +15,8 @@ import java.util.List;
 @Entity
 @Getter
 @Builder
+@DynamicUpdate
+@DynamicInsert
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 public class Member extends BaseEntity {
