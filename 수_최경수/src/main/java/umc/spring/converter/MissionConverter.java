@@ -1,5 +1,6 @@
 package umc.spring.converter;
 
+import umc.spring.domain.Member;
 import umc.spring.domain.Mission;
 import umc.spring.domain.Store;
 import umc.spring.web.dto.MissionRequestDTO;
@@ -21,4 +22,5 @@ public class MissionConverter {
             .store(store)
             .build();
   }
+
 }

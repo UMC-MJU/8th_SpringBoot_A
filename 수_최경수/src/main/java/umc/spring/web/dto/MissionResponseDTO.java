@@ -16,4 +16,12 @@ public class MissionResponseDTO {
     Long missionId;
     LocalDate deadline;
   }
+
+  @Builder
+  @Getter
+  @NoArgsConstructor
+  @AllArgsConstructor
+  public static class JoinMemberResultDTO{
+    Long missionId;
+  }
 }

@@ -13,4 +13,10 @@ public class MissionRequestDTO {
     LocalDate deadline;
     String missionSpec;
   }
+
+  @Getter
+  public static class JoinMemberDto{
+    Long memberId;
+    Long missionId;
+  }
 }
