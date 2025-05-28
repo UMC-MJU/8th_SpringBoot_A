@@ -28,7 +28,7 @@
         <module name="spring.test" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="17">
       <module name="spring.querydsl" target="17" />
     </bytecodeTargetLevel>
   </component>

@@ -6,13 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
-import umc.spring.domain.enums.MissionStatus;
 import umc.spring.service.MissionService.MissionQueryService;
 import umc.spring.service.ReviewService.ReviewQueryService;
 import umc.spring.service.StoreService.StoreQueryService;
-import umc.spring.service.UserService.UserQueryService;
-
-import static umc.spring.domain.enums.MissionStatus.CHALLENGING;
+import umc.spring.service.MemeberService.MemberQueryService;
 
 @SpringBootApplication
 @EnableJpaAuditing
@@ -26,7 +23,7 @@ public class Application {
 	public CommandLineRunner run(ApplicationContext context){
 		return args -> {
 			StoreQueryService storeService = context.getBean(StoreQueryService.class);
-			UserQueryService userSerivce = context.getBean(UserQueryService.class);
+			MemberQueryService userSerivce = context.getBean(MemberQueryService.class);
 			ReviewQueryService reviewService = context.getBean(ReviewQueryService.class);
 			MissionQueryService missionService = context.getBean(MissionQueryService.class);
 
