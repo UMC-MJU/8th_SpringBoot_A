@@ -1,4 +1,4 @@
-package umc.study.service.reviewService;
+package umc.study.web.service.reviewService;
 
 import umc.study.domain.Review;
 

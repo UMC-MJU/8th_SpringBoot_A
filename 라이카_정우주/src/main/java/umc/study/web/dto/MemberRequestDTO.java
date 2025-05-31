@@ -6,18 +6,19 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class MemberRequestDTO {
 
-    public class MemberResponseDTO {
-
-        @Builder
-        @Getter
-        @NoArgsConstructor
-        @AllArgsConstructor
-        public static class JoinResultDTO{
-            Long memberId;
-            LocalDateTime createdAt;
-        }
+    @Getter
+    public static class JoinDto{
+        String name;
+        Integer gender;
+        Integer birthYear;
+        Integer birthMonth;
+        Integer birthDay;
+        String address;
+        String specAddress;
+        List<Long> preferCategory;
     }
 }
