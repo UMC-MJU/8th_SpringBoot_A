@@ -29,7 +29,7 @@ public class HomeQueryServiceImpl implements HomeQueryService {
         Integer points = memberRepository.findMemberPoint(memberId);
         homeInfo.put("points", points);
 
-        List<Mission> inProgressMissions = missionRepository.findMissionsByMemberId(memberId, MissionStatus.CHALLENGING);
+        List<Mission> inProgressMissions = missionRepository.findMissionsByMemberIdAndStatus(memberId, MissionStatus.CHALLENGING);
         homeInfo.put("inProgressMissions", inProgressMissions);
 
         return homeInfo;
@@ -43,10 +43,12 @@ public class HomeQueryServiceImpl implements HomeQueryService {
     @Override
     public double calculateMissionState(Long memberId) {
         int totalMissions = missionRepository.countTotalMissionsByMemberId(memberId);
+
         int completedMissions = missionRepository.countCompletedMissionsByMemberId(memberId);
+
         if (totalMissions == 0) {
             return 0.0;
         }
-        return (double) completedMissions / totalMissions * 10;
+        return (double) completedMissions / totalMissions * 100.0;
     }
 }

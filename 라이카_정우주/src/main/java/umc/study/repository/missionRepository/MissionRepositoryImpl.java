@@ -5,6 +5,7 @@ import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 import umc.study.domain.Mission;
+
 import umc.study.domain.QMission;
 import umc.study.domain.enums.MissionStatus;
 import umc.study.domain.mapping.QMemberMission;
@@ -13,6 +14,7 @@ import java.util.List;
 
 import static umc.study.domain.QStore.store;
 
+
 @Repository
 @RequiredArgsConstructor
 public class MissionRepositoryImpl implements MissionRepositoryCustom {
@@ -20,6 +22,11 @@ public class MissionRepositoryImpl implements MissionRepositoryCustom {
     private final JPAQueryFactory jpaQueryFactory;
     private final QMission mission = QMission.mission;
     private final QMemberMission memberMission = QMemberMission.memberMission;
+
+    @Override
+    public List<Mission> findMissionsByMemberId(Long memberId) {
+        return List.of();
+    }
 
     @Override
     public List<Mission> findMissionsByMemberId(Long memberId, MissionStatus status) {
@@ -36,6 +43,11 @@ public class MissionRepositoryImpl implements MissionRepositoryCustom {
                 .join(mission.memberMissionList, memberMission)
                 .where(predicate)
                 .fetch();
+    }
+
+    @Override
+    public List<Mission> findMissionsByMemberIdAndStatus(Long memberId, MissionStatus status) {
+        return List.of();
     }
 
     @Override
