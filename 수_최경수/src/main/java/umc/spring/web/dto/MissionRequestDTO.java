@@ -18,5 +18,6 @@ public class MissionRequestDTO {
   public static class JoinMemberDto{
     Long memberId;
     Long missionId;
+    Long status;
   }
 }
