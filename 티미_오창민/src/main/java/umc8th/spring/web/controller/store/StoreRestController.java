@@ -9,6 +9,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import umc8th.spring.apiPayload.ApiResponse;
 import umc8th.spring.converter.StoreConverter;
@@ -21,6 +22,7 @@ import umc8th.spring.web.dto.store.StoreResponseDTO;
 
 @RestController //객체를 반환함으로서 josn 파일을 반환할 것
 @RequiredArgsConstructor
+@Validated
 @RequestMapping("/stores") //공통 주소 처리
 public class StoreRestController {
     private final StoreQueryService storeQueryService;
