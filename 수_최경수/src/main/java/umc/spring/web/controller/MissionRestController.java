@@ -53,7 +53,7 @@ public class MissionRestController {
     return ApiResponse.onSuccess(MissionMemberConverter.toJoinResultDTO(mission));
   }
 
-  @GetMapping("/my")
+  @GetMapping("/{userId}")
   @Operation(summary = "내가 진행중인 미션 목록 API", description = "내가 진행중인 미션 목록을 조회하는 API 이며, 페이징을 포함합니다. query String으로 page 번호를 주세요")
   @ApiResponses({
           @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "COMMON200",description = "OK, 성공"),
@@ -61,7 +61,7 @@ public class MissionRestController {
           @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "AUTH004", description = "acess 토큰 만료",content = @Content(schema = @Schema(implementation = ApiResponse.class))),
           @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "AUTH006", description = "acess 토큰 모양이 이상함",content = @Content(schema = @Schema(implementation = ApiResponse.class))),
   })
-  public ApiResponse<MissionResponseDTO.MissionPreViewListDTO> getMissionList(@Valid @RequestParam(name="userId") Long userId, @RequestParam(name = "page") Integer page, @RequestParam(name = "size") Integer size){
+  public ApiResponse<MissionResponseDTO.MissionPreViewListDTO> getMissionList(@Valid @PathVariable(name="userId") Long userId, @RequestParam(name = "page") Integer page, @RequestParam(name = "size") Integer size){
     Page<MemberMission> memberMissionList = missionQueryService.getMissionList(userId, page, size);
     return ApiResponse.onSuccess(MissionConverter.missionPreViewListDTO(memberMissionList));
   }
