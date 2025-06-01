@@ -1,14 +1,18 @@
 package umc8th.spring.service.serviceIml;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import umc8th.spring.apiPayload.code.status.ErrorStatus;
 import umc8th.spring.apiPayload.exception.handler.StoreHandler;
 import umc8th.spring.converter.StoreConverter;
 import umc8th.spring.domain.Region;
+import umc8th.spring.domain.Review;
 import umc8th.spring.domain.Store;
 import umc8th.spring.repository.RegionRepository;
+import umc8th.spring.repository.ReviewRepository;
 import umc8th.spring.repository.StoreRepository;
 import umc8th.spring.service.StoreQueryService;
 import umc8th.spring.web.dto.store.StoreRequestDTO;
@@ -25,7 +29,7 @@ public class StoreQueryServiceImpl implements StoreQueryService {
     //storerepository가 extends하고 있기 때문에..
     private final StoreRepository storeRepository;
     private final RegionRepository regionRepository;
-
+    private final ReviewRepository reviewRepository;
 
     @Override
     public Store findStore(Long id) {
@@ -35,6 +39,14 @@ public class StoreQueryServiceImpl implements StoreQueryService {
 
     public boolean existsById(Long id) {
         return storeRepository.existsById(id);
+    }
+
+    @Override
+    public Page<Review> getReviewList(Long storeId, Integer page) {
+        Store store = storeRepository.findById(storeId).get();
+
+        Page<Review> StorePage = reviewRepository.findAllByStore(store, PageRequest.of(page, 10));
+        return StorePage;
     }
 
     @Override

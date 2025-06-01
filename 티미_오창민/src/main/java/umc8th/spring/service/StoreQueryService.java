@@ -1,6 +1,8 @@
 package umc8th.spring.service;
 
 
+import org.springframework.data.domain.Page;
+import umc8th.spring.domain.Review;
 import umc8th.spring.domain.Store;
 import umc8th.spring.web.dto.store.StoreRequestDTO;
 
@@ -17,5 +19,6 @@ public interface StoreQueryService {
     //상점의 존제 여부를 반환하는 메소드
     boolean existsById(Long id);
 
+    Page<Review> getReviewList(Long storeId, Integer page);
 }
 
