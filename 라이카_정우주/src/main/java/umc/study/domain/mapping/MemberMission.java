@@ -29,4 +29,8 @@ public class MemberMission extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "mission_id", nullable = false)
     private Mission mission;
+
+    public void completeStatus() {
+        this.status = MissionStatus.COMPLETE;
+    }
 }

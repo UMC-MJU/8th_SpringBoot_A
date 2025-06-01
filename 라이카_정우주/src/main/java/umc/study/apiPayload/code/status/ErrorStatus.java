@@ -26,9 +26,13 @@ public enum ErrorStatus implements BaseErrorCode {
     STORE_NAME_DUPLICATE(HttpStatus.BAD_REQUEST, "STORE4001", "이미 존재하는 가게 이름입니다."),
     STORE_NOT_FOUND(HttpStatus.NOT_FOUND, "STORE4001", "해당 가게가 존재하지 않습니다."),
     MISSION_NOT_FOUND(HttpStatus.NOT_FOUND, "MISSION4001", "해당 미션이 존재하지 않습니다."),
+    MISSION_ALREADY_COMPLETED(HttpStatus.BAD_REQUEST, "MISSION4002", "이미 완료된 미션입니다."),
+
 
     //ETC
-    TEMP_EXCEPTION(HttpStatus.BAD_REQUEST, "TEMP4001", "이거는 테스트");
+    TEMP_EXCEPTION(HttpStatus.BAD_REQUEST, "TEMP4001", "이거는 테스트"),
+    PAGE_INVALID(HttpStatus.BAD_REQUEST, "PAGE4001", "페이지 번호는 1 이상이어야 합니다.");
+
 
     private final HttpStatus httpStatus;
     private final String code;

@@ -2,8 +2,10 @@ package umc.study.convertor;
 
 import umc.study.domain.Review;
 import umc.study.web.dto.ReviewResponseDTO;
+import umc.study.web.dto.StoreResponseDTO;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class ReviewConverter {
 

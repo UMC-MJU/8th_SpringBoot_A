@@ -27,7 +27,7 @@ public class QReview extends EntityPathBase<Review> {
     public final StringPath body = createString("body");
 
     //inherited
-    public final DateTimePath<java.time.LocalDateTime> createdAT = _super.createdAT;
+    public final DateTimePath<java.time.LocalDateTime> createdAt = _super.createdAt;
 
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
@@ -40,7 +40,7 @@ public class QReview extends EntityPathBase<Review> {
     public final QStore store;
 
     //inherited
-    public final DateTimePath<java.time.LocalDateTime> updatedAT = _super.updatedAT;
+    public final DateTimePath<java.time.LocalDateTime> updatedAt = _super.updatedAt;
 
     public QReview(String variable) {
         this(Review.class, forVariable(variable), INITS);
