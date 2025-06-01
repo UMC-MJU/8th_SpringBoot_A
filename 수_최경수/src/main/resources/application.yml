@@ -7,6 +7,14 @@ spring:
   sql:
     init:
       mode: never
+  server:
+    devtools:
+      livereload:
+        enabled: true
+      restart:
+        enabled: true
+      thymeleaf:
+        enabled: true
   jpa:
     properties:
       hibernate:
