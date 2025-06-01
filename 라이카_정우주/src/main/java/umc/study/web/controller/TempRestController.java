@@ -10,7 +10,7 @@ import umc.study.apiPayload.ApiResponse;
 
 import umc.study.convertor.TempConverter;
 import umc.study.web.dto.TempResponse;
-import umc.study.web.service.TempQueryService;
+import umc.study.web.service.tempService.TempQueryService;
 
 @RestController
 @RequestMapping("/temp")

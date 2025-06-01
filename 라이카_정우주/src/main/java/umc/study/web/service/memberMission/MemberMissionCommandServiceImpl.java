@@ -8,12 +8,14 @@ import umc.study.apiPayload.exception.handler.MemberMissionHandler;
 import umc.study.convertor.MemberMissionConverter;
 import umc.study.domain.Member;
 import umc.study.domain.Mission;
+import umc.study.domain.enums.MissionStatus;
 import umc.study.domain.mapping.MemberMission;
+
+import umc.study.repository.memberMission.MemberMissionRepository;
 import umc.study.repository.memberRepository.MemberRepository;
-import umc.study.repository.missionRepository.MemberMissionRepository;
 import umc.study.repository.missionRepository.MissionRepository;
-import umc.study.web.dto.MemberMissionRequestDTO;
-import umc.study.web.service.memberMission.MemberMissionCommandService;
+import umc.study.web.dto.mapping.MemberMissionRequestDTO;
+
 
 @Service
 @RequiredArgsConstructor
@@ -33,6 +35,27 @@ public class MemberMissionCommandServiceImpl implements MemberMissionCommandServ
                 .orElseThrow(() -> new MemberMissionHandler(ErrorStatus.MISSION_NOT_FOUND));
 
         MemberMission memberMission = MemberMissionConverter.toMemberMission(member, mission);
+        return memberMissionRepository.save(memberMission);
+    }
+
+
+
+
+    @Override
+    public MemberMission completeMission(Long memberMissionId, Long memberId) {
+        MemberMission memberMission = memberMissionRepository.findById(memberMissionId)
+                .orElseThrow(() -> new MemberMissionHandler(ErrorStatus.MISSION_NOT_FOUND));
+
+        if (!memberMission.getMember().getId().equals(memberId)) {
+            throw new MemberMissionHandler(ErrorStatus.MEMBER_NOT_FOUND);
+        }
+
+        if (memberMission.getStatus() == MissionStatus.COMPLETE) {
+            throw new MemberMissionHandler(ErrorStatus.MISSION_ALREADY_COMPLETED);
+        }
+
+        memberMission.completeStatus();
+
         return memberMissionRepository.save(memberMission);
     }
 }

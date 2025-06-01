@@ -25,7 +25,7 @@ public class QMemberAgree extends EntityPathBase<MemberAgree> {
     public final umc.study.domain.common.QBaseEntity _super = new umc.study.domain.common.QBaseEntity(this);
 
     //inherited
-    public final DateTimePath<java.time.LocalDateTime> createdAT = _super.createdAT;
+    public final DateTimePath<java.time.LocalDateTime> createdAt = _super.createdAt;
 
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
@@ -34,7 +34,7 @@ public class QMemberAgree extends EntityPathBase<MemberAgree> {
     public final umc.study.domain.QTerms terms;
 
     //inherited
-    public final DateTimePath<java.time.LocalDateTime> updatedAT = _super.updatedAT;
+    public final DateTimePath<java.time.LocalDateTime> updatedAt = _super.updatedAt;
 
     public QMemberAgree(String variable) {
         this(MemberAgree.class, forVariable(variable), INITS);

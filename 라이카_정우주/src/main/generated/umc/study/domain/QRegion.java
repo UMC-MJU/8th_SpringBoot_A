@@ -23,7 +23,7 @@ public class QRegion extends EntityPathBase<Region> {
     public final umc.study.domain.common.QBaseEntity _super = new umc.study.domain.common.QBaseEntity(this);
 
     //inherited
-    public final DateTimePath<java.time.LocalDateTime> createdAT = _super.createdAT;
+    public final DateTimePath<java.time.LocalDateTime> createdAt = _super.createdAt;
 
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
@@ -32,7 +32,7 @@ public class QRegion extends EntityPathBase<Region> {
     public final ListPath<Store, QStore> storeList = this.<Store, QStore>createList("storeList", Store.class, QStore.class, PathInits.DIRECT2);
 
     //inherited
-    public final DateTimePath<java.time.LocalDateTime> updatedAT = _super.updatedAT;
+    public final DateTimePath<java.time.LocalDateTime> updatedAt = _super.updatedAt;
 
     public QRegion(String variable) {
         super(Region.class, forVariable(variable));

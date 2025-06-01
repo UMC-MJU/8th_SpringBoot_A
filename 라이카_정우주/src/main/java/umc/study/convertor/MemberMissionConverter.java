@@ -4,7 +4,7 @@ import umc.study.domain.Member;
 import umc.study.domain.Mission;
 import umc.study.domain.enums.MissionStatus;
 import umc.study.domain.mapping.MemberMission;
-import umc.study.web.dto.MemberMissionResponseDTO;
+import umc.study.web.dto.mapping.MemberMissionResponseDTO;
 
 import java.time.LocalDateTime;
 
@@ -27,7 +27,19 @@ public class MemberMissionConverter {
         return MemberMission.builder()
                 .member(member)
                 .mission(mission)
-                .status(MissionStatus.CHALLENGING) // 도전 상태로 시작
+                .status(MissionStatus.CHALLENGING)
+                .build();
+    }
+
+    public static MemberMissionResponseDTO.CompleteMissionResultDTO toCompleteMissionResultDTO(MemberMission memberMission) {
+        return MemberMissionResponseDTO.CompleteMissionResultDTO.builder()
+                .memberMissionId(memberMission.getId())
+                .memberName(memberMission.getMember().getName())
+                .missionSpec(memberMission.getMission().getMissionSpec())
+                .reward(memberMission.getMission().getReward())
+                .storeName(memberMission.getMission().getStore().getName())
+                .status(memberMission.getStatus())
+                .updatedAt(LocalDateTime.now())
                 .build();
     }
 }

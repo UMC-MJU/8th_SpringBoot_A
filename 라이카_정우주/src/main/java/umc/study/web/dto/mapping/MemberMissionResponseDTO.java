@@ -1,4 +1,4 @@
-package umc.study.web.dto;
+package umc.study.web.dto.mapping;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -24,5 +24,19 @@ public class MemberMissionResponseDTO {
         private String storeName;
         private MissionStatus status;
         private LocalDateTime createdAt;
+    }
+
+    @Builder
+    @Getter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class CompleteMissionResultDTO {
+        private Long memberMissionId;
+        private String memberName;
+        private String missionSpec;
+        private Integer reward;
+        private String storeName;
+        private MissionStatus status;
+        private LocalDateTime updatedAt;
     }
 }

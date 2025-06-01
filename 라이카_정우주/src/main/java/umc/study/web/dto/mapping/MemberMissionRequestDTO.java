@@ -1,4 +1,4 @@
-package umc.study.web.dto;
+package umc.study.web.dto.mapping;
 
 import lombok.Getter;
 import umc.study.validation.annotation.ExistMission;
@@ -11,5 +11,10 @@ public class MemberMissionRequestDTO {
 
         @ExistMission
         private Long missionId;
+    }
+
+    @Getter
+    public static class CompleteMissionDto {
+        private Long memberId;
     }
 }

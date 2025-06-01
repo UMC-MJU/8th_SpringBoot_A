@@ -25,7 +25,7 @@ public class QMission extends EntityPathBase<Mission> {
     public final umc.study.domain.common.QBaseEntity _super = new umc.study.domain.common.QBaseEntity(this);
 
     //inherited
-    public final DateTimePath<java.time.LocalDateTime> createdAT = _super.createdAT;
+    public final DateTimePath<java.time.LocalDateTime> createdAt = _super.createdAt;
 
     public final DatePath<java.time.LocalDate> deadline = createDate("deadline", java.time.LocalDate.class);
 
@@ -40,7 +40,7 @@ public class QMission extends EntityPathBase<Mission> {
     public final QStore store;
 
     //inherited
-    public final DateTimePath<java.time.LocalDateTime> updatedAT = _super.updatedAT;
+    public final DateTimePath<java.time.LocalDateTime> updatedAt = _super.updatedAt;
 
     public QMission(String variable) {
         this(Mission.class, forVariable(variable), INITS);
