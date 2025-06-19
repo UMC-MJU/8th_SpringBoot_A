@@ -8,6 +8,7 @@ import umc.spring.domain.enums.MissionStatus;
 
 @Entity
 @Getter
+@Setter
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
@@ -28,4 +29,9 @@ public class MemberMission extends BaseEntity {
   @ManyToOne
   @JoinColumn(name = "mission_id")
   private Mission mission;
+
+  public void setMissionAndMember(Mission mission, Member member){
+    this.mission = mission;
+    this.member = member;
+  }
 }
