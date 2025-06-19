@@ -32,4 +32,28 @@ public class StoreResponseDTO {
     String body;          // 리뷰 상세 내용
     LocalDate createdAt;  // 리뷰 작성 날짜
   }
+
+  @Builder
+  @Getter
+  @NoArgsConstructor
+  @AllArgsConstructor
+  public static class MissionPreViewListDTO {
+    List<MissionPreViewDTO> missionList;
+    Integer listSize;
+    Integer totalPage;
+    Long totalElements;
+    Boolean isFirst;
+    Boolean isLast;
+  }
+
+  @Builder
+  @Getter
+  @NoArgsConstructor
+  @AllArgsConstructor
+  public static class MissionPreViewDTO {
+    String missionSpec;
+    Integer reward;
+    LocalDate deadline;
+    LocalDate createdAt;
+  }
 }
