@@ -15,6 +15,21 @@ public class MemberConverter {
             .build();
   }
 
+  public static MemberResponseDTO.LoginResultDTO toLoginResultDTO(Long memberId, String accessToken) {
+    return MemberResponseDTO.LoginResultDTO.builder()
+            .memberId(memberId)
+            .accessToken(accessToken)
+            .build();
+  }
+
+  public static MemberResponseDTO.MemberInfoDTO toMemberInfoDTO(Member member){
+    return MemberResponseDTO.MemberInfoDTO.builder()
+            .name(member.getName())
+            .email(member.getEmail())
+            .gender(member.getGender().name())
+            .build();
+  }
+
   public static Member toMember(MemberRequestDTO.JoinDto request){
     Gender gender = null;
 
@@ -32,9 +47,12 @@ public class MemberConverter {
 
     return Member.builder()
             .address(request.getAddress())
+            .email(request.getEmail())
+            .password(request.getPassword())
             .specAddress(request.getSpecAddress())
             .gender(gender)
             .name(request.getName())
+            .role(request.getRole())
             .memberPreferList(new ArrayList<>())
             .build();
   }

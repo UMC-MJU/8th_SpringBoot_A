@@ -9,6 +9,7 @@ import umc.spring.domain.alaram.Alarm;
 import umc.spring.domain.common.BaseEntity;
 import umc.spring.domain.enums.Gender;
 import umc.spring.domain.enums.MemberStatus;
+import umc.spring.domain.enums.Role;
 import umc.spring.domain.enums.SocialType;
 import umc.spring.domain.mapping.MemberAgree;
 import umc.spring.domain.mapping.MemberMission;
@@ -44,6 +45,9 @@ public class Member extends BaseEntity {
   private Gender gender;
 
   @Enumerated(EnumType.STRING)
+  private Role role;
+
+  @Enumerated(EnumType.STRING)
   @Column(columnDefinition = "VARCHAR(10)")
   private SocialType socialType;
 
@@ -55,6 +59,9 @@ public class Member extends BaseEntity {
 
 //  @Column(nullable = false, length = 50)
   private String email;
+
+  @Column(nullable = false)
+  private String password;
 
   @ColumnDefault("0")
   private Integer point;
@@ -82,5 +89,9 @@ public class Member extends BaseEntity {
             "email" + email + "," +
             "address" + address +
             '}';
+  }
+
+  public void encodePassword(String password){
+    this.password = password;
   }
 }
