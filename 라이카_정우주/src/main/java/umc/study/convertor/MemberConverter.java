@@ -25,22 +25,25 @@ public class MemberConverter {
 
         Gender gender = null;
 
-        switch (request.getGender()){
-            case 1:
-                gender = Gender.MALE;
-                break;
-            case 2:
-                gender = Gender.FEMALE;
-                break;
-            default:
-                break;
-        }
+//        switch (request.getGender()){
+//            case 1:
+//                gender = Gender.MALE;
+//                break;
+//            case 2:
+//                gender = Gender.FEMALE;
+//                break;
+//            default:
+//                break;
+//        }
 
         return Member.builder()
                 .address(request.getAddress())
                 .specAddress(request.getSpecAddress())
-                .gender(gender)
+                .gender(request.getGender())
                 .name(request.getName())
+                .email(request.getEmail())
+                .password(request.getPassword())
+                .role(request.getRole())
                 .memberPreferList(new ArrayList<>())
                 .build();
     }
@@ -120,6 +123,21 @@ public class MemberConverter {
                 .totalElements(memberMissionPage.getTotalElements())
                 .isFirst(memberMissionPage.isFirst())
                 .isLast(memberMissionPage.isLast())
+                .build();
+    }
+
+    public static MemberResponseDTO.LoginResultDTO toLoginResultDTO(Long memberId, String accessToken) {
+        return MemberResponseDTO.LoginResultDTO.builder()
+                .memberId(memberId)
+                .accessToken(accessToken)
+                .build();
+    }
+
+    public static MemberResponseDTO.MemberInfoDTO toMemberInfoDTO(Member member){
+        return MemberResponseDTO.MemberInfoDTO.builder()
+                .name(member.getName())
+                .email(member.getEmail())
+                .gender(member.getGender().name())
                 .build();
     }
 }
