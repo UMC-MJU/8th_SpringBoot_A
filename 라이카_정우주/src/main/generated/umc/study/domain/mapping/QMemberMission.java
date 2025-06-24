@@ -25,7 +25,7 @@ public class QMemberMission extends EntityPathBase<MemberMission> {
     public final umc.study.domain.common.QBaseEntity _super = new umc.study.domain.common.QBaseEntity(this);
 
     //inherited
-    public final DateTimePath<java.time.LocalDateTime> createdAT = _super.createdAT;
+    public final DateTimePath<java.time.LocalDateTime> createdAt = _super.createdAt;
 
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
@@ -36,7 +36,7 @@ public class QMemberMission extends EntityPathBase<MemberMission> {
     public final EnumPath<umc.study.domain.enums.MissionStatus> status = createEnum("status", umc.study.domain.enums.MissionStatus.class);
 
     //inherited
-    public final DateTimePath<java.time.LocalDateTime> updatedAT = _super.updatedAT;
+    public final DateTimePath<java.time.LocalDateTime> updatedAt = _super.updatedAt;
 
     public QMemberMission(String variable) {
         this(MemberMission.class, forVariable(variable), INITS);

@@ -27,7 +27,7 @@ public class QStore extends EntityPathBase<Store> {
     public final StringPath address = createString("address");
 
     //inherited
-    public final DateTimePath<java.time.LocalDateTime> createdAT = _super.createdAT;
+    public final DateTimePath<java.time.LocalDateTime> createdAt = _super.createdAt;
 
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
@@ -40,7 +40,7 @@ public class QStore extends EntityPathBase<Store> {
     public final NumberPath<Float> score = createNumber("score", Float.class);
 
     //inherited
-    public final DateTimePath<java.time.LocalDateTime> updatedAT = _super.updatedAT;
+    public final DateTimePath<java.time.LocalDateTime> updatedAt = _super.updatedAt;
 
     public QStore(String variable) {
         this(Store.class, forVariable(variable), INITS);

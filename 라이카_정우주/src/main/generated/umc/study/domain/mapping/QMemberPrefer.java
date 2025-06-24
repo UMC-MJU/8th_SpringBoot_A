@@ -25,7 +25,7 @@ public class QMemberPrefer extends EntityPathBase<MemberPrefer> {
     public final umc.study.domain.common.QBaseEntity _super = new umc.study.domain.common.QBaseEntity(this);
 
     //inherited
-    public final DateTimePath<java.time.LocalDateTime> createdAT = _super.createdAT;
+    public final DateTimePath<java.time.LocalDateTime> createdAt = _super.createdAt;
 
     public final umc.study.domain.QFoodCategory foodCategory;
 
@@ -34,7 +34,7 @@ public class QMemberPrefer extends EntityPathBase<MemberPrefer> {
     public final umc.study.domain.QMember member;
 
     //inherited
-    public final DateTimePath<java.time.LocalDateTime> updatedAT = _super.updatedAT;
+    public final DateTimePath<java.time.LocalDateTime> updatedAt = _super.updatedAt;
 
     public QMemberPrefer(String variable) {
         this(MemberPrefer.class, forVariable(variable), INITS);

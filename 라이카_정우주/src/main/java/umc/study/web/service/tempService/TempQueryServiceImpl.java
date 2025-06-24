@@ -1,7 +1,6 @@
-package umc.study.web.service;
+package umc.study.web.service.tempService;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import umc.study.apiPayload.code.status.ErrorStatus;
 import umc.study.apiPayload.exception.handler.TempHandler;
